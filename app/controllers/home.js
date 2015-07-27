@@ -15,11 +15,12 @@ router.post('/news', function(req, res, next)
    if (newsline.length === 0) newsline = 'I said nothing. :-(';
    var user = req.body.username;
    if (user.length === 0) user = 'anonymous';
-   var date =  Date().toLocaleString();
+   var date = Date()
+   var dateStr =  date.toLocaleString();
    
    console.log(newsline);
    console.log(user);
-   console.log(date);
+   console.log(dateStr);
    
    var article = new Article({newsitem: newsline, username: user, timestamp: date});
    

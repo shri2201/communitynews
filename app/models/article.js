@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var ArticleSchema = new Schema({
   newsitem: String,
   username: String,
-  timestamp: String
+  timestamp: Date
 });
 
 ArticleSchema.virtual('date')
