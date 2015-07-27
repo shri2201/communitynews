@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div(class="container")     
+    div(class="jumbotron")   
+      
+      h2  Community Happenings Newsline
+      
+      p #{title}
+        form( class='form-horizontal', role='form', name="News", action="/news", method="post")
+          div(class='form-group')  
+            div(class="col-sm-10")
+             input(type="text", class="form-control", width='80', name="newsline", placeholder="Enter news")
+          div(class='form-group')  
+            div(class="col-sm-10")
+             input(type="text", class="form-control", name="username", placeholder="Name")
+          div(class='form-group')
+            div(class="col-sm-10")    
+             button(type="submit", class="btn btn-primary btn-lg active") Share a Happening
+
+             
+    h2 Happening now..
+    div(class="panel-group")
+      for article in articles	
+        div(class="panel panel-primary")
+          div(class="panel-heading")  #{article.username} says.. @ #{article.timestamp}
+          div(class="panel-body") #{article.newsitem}
+    
